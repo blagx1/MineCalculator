@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "minecalc",
+  "version": "${version}",
+  "name": "MineCalculator",
+  "description": "§6§lОСНОВНАЯ ИНФОРМАЦИЯ§r\n§6MineCalculator §7— удобный клиентский калькулятор для Minecraft Java 1.21.11 на Fabric.\n§6§lФУНКЦИИ§r\n§6• §7Арифметика, скобки, десятичные числа и проценты.\n§6• §7История вычислений с повтором выражений и копированием результата.\n§6• §7Пять разделов интерфейса, четыре цветовые темы и плавные анимации.\n§6§lНАСТРОЙКИ§r\n§6• §7Масштаб интерфейса, прозрачность, горячие клавиши и положение окна.\n§6• §7Лёгкий клиентский интерфейс без фоновой обработки игрового мира.\n§4§lАвтор: By blagx1",
+  "icon": "assets/minecalc/icon.png",
+  "authors": [
+    "blagx1"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.minecalc.fabric.MineCalcClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

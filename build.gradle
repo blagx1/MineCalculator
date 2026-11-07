@@ -1,0 +1,8 @@
+plugins {
+    id 'base'
+}
+
+allprojects {
+    group = project.findProperty("maven_group") ?: "dev.minecalc"
+    version = project.findProperty("mod_version") ?: "0.1.0"
+}
