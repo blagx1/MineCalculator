@@ -1,0 +1,58 @@
+plugins {
+    id 'net.neoforged.moddev' version "${moddevgradle_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = "MineCalculator-NeoForge"
+}
+
+sourceSets {
+    main {
+        java.srcDir project(":").file("client-common/src/main/java")
+    }
+}
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+neoForge {
+    version = project.neoforge_version
+
+    runs {
+        client {
+            client()
+        }
+    }
+
+    mods {
+        minecalc {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    implementation project(":common")
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+    options.release = 21
+}
+
+tasks.named("jar", Jar) {
+    from project(":common").sourceSets.main.output
+    manifest {
+        attributes(
+            "Specification-Title": "minecalc",
+            "Specification-Vendor": "blagx1",
+            "Specification-Version": project.version,
+            "Implementation-Version": project.version
+        )
+    }
+}
+

@@ -1,6 +1,8 @@
 pluginManagement {
     repositories {
         maven { url = "https://maven.fabricmc.net/" }
+        maven { url = "https://maven.minecraftforge.net/" }
+        maven { url = "https://maven.neoforged.net/releases/" }
         gradlePluginPortal()
         mavenCentral()
     }
@@ -12,5 +14,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "MineCalculator"
-include("common", "fabric")
+rootProject.name = "MineCalculator-CompactSidebar-CenteredIcons-20261108"
+include("common", "fabric", "forge", "neoforge")

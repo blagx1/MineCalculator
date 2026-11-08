@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="minecalc"
+version="${file.jarVersion}"
+displayName="MineCalculator"
+authors="blagx1"
+logoFile="icon.png"
+description='''MineCalculator — удобный клиентский калькулятор для Minecraft Java 1.21.11.
+
+ФУНКЦИИ
+• Арифметика, скобки, десятичные числа и проценты.
+• История вычислений с повтором выражений и копированием результата.
+• Пять разделов интерфейса, четыре цветовые темы и плавные анимации.
+
+НАСТРОЙКИ
+• Масштаб интерфейса, прозрачность, горячие клавиши и положение окна.
+• Лёгкий клиентский интерфейс без фоновой обработки игрового мира.
+
+Автор: By blagx1'''
+
+[[dependencies.minecalc]]
+modId="neoforge"
+type="required"
+versionRange="[21.11.0,)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.minecalc]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.11,1.22)"
+ordering="NONE"
+side="CLIENT"

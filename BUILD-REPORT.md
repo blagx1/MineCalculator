@@ -1,14 +1,11 @@
-# Build report — MineCalculator 1.0.3
+# Build report — MineCalculator multi-loader development port
 
-- Common Java source compilation: passed with the available JDK.
-- Client source syntax compilation against local Minecraft/Fabric API stubs: passed. This is a syntax check only, not a real Fabric build.
-- `fabric.mod.json`: valid JSON.
-- Icon: valid 128×128 PNG.
-- Full Fabric Gradle build: not run; Gradle executable and Gradle Wrapper are absent in this environment.
-- In-game visual/performance checks: not run.
-- Hardenne Regular: not embedded; exact `.ttf` or `.otf` file is still required.
+- Java 21 compilation of `common/src/main/java`: passed.
+- JSON syntax validation for all metadata/language resources: passed.
+- Shared screen extraction and platform adapter source files: present.
+- Full Fabric Gradle build: not run (Gradle executable and Wrapper are absent).
+- Full Forge Gradle build: not run.
+- Full NeoForge Gradle build: not run.
+- In-game tests: not run.
 
-
-## Обновление 1.0.3
-
-Добавлены ресурс шрифта Hardenne Regular, новая иконка и промо-изображение.
+This archive is a development source port. It is not a set of release-ready JARs. Forge and NeoForge API compatibility must be confirmed by running the Gradle builds and launching Minecraft 1.21.11 on each loader.

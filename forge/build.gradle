@@ -1,0 +1,56 @@
+
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version "${forge_gradle_version}"
+}
+
+minecraft {
+    mappings channel: 'official', version: project.minecraft_version
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = "MineCalculator-Forge"
+}
+
+sourceSets {
+    main {
+        java.srcDir project(":").file("client-common/src/main/java")
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+dependencies {
+    implementation minecraft.dependency("net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}")
+    implementation project(":common")
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+    options.release = 21
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("META-INF/mods.toml") {
+        expand "version": project.version
+    }
+}
+
+tasks.named("jar", Jar) {
+    from project(":common").sourceSets.main.output
+}

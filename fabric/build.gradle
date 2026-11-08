@@ -17,6 +17,12 @@ loom {
     }
 }
 
+sourceSets {
+    client {
+        java.srcDir project(":").file("client-common/src/main/java")
+    }
+}
+
 version = project.mod_version
 group = project.maven_group
 
